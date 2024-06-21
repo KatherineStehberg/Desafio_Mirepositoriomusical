@@ -1,4 +1,15 @@
 GET http://localhost:3000/productos
 
 Send request
-Post http:
+Post http://localhost:3000/productos
+Content-Type: application/json
+
+{
+  "nombre": "Canción 1",   
+  "descripción": "Canción"
+  "precio": 100,
+  "stock": 100  
+  }
+
+Response
+HTTP/1.1 201 Created
