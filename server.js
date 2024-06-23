@@ -8,13 +8,22 @@ app.use(express.json());
 
 // Function to read the repertorio.json file
 const readRepertorio = () => {
-  const data = fs.readFileSync('repertorio.json', 'utf8');
-  return JSON.parse(data);
+  try {
+    const data = fs.readFileSync('repertorio.json', 'utf8');
+    return JSON.parse(data);
+  } catch (error) {
+    console.error('Error reading repertorio.json:', error);
+    return [];
+  }
 };
 
 // Function to write to the repertorio.json file
 const writeRepertorio = (data) => {
-  fs.writeFileSync('repertorio.json', JSON.stringify(data, null, 2), 'utf8');
+  try {
+    fs.writeFileSync('repertorio.json', JSON.stringify(data, null, 2), 'utf8');
+  } catch (error) {
+    console.error('Error writing to repertorio.json:', error);
+  }
 };
 
 // POST /canciones : Add a new song to the repertoire
