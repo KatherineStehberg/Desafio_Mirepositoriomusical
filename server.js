@@ -1,10 +1,15 @@
 const express = require('express');
 const fs = require('fs');
+const path = require('path');
 const app = express();
-const PORT = 5000;
+const PORT = 3000; // Change the port to 3000
 
 // Middleware to parse JSON bodies
 app.use(express.json());
+
+// Middleware to serve static files from the 'public' directory
+const publicPath = path.join(__dirname, 'public');
+app.use(express.static(publicPath));
 
 // Function to read the repertorio.json file
 const readRepertorio = () => {
