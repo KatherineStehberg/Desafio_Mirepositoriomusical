@@ -68,5 +68,3 @@ app.delete("/canciones/:id", (req, res) => {
 
 app.listen(PORT, console.log(`http://localhost:${PORT}`));
 
-//Manipular los parámetros obtenidos en la URL (1 Puntos) LISTO
-//5. Manipular el payload de una consulta HTTP al servidor (2 Puntos) LISTO
