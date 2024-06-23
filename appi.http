@@ -1,16 +1,27 @@
-GET http://localhost:3000/productos
+###
+GET http://localhost:5000/canciones
 
-Send request
-Post http://localhost:3000/productos
+###
+
+POST http://localhost:5000/canciones
 Content-Type: application/json
 
 {
-  "nombre": "Canción 1",   
-  "descripción": "Canción",
-  "precio": 100,
-  "stock": 100  
+  "id": 1,
+  "titulo": "Canción 1",
+  "artista": "Artista 1",
+  "tono": "C#m"
 }
 
+###
 
-Response
-HTTP/1.1 201 Created
+PUT http://localhost:5000/canciones/1
+Content-Type: application/json
+
+{
+  "titulo": "Canción 1 (Actualizada)"
+}
+
+###
+
+DELETE http://localhost:5000/canciones/1
